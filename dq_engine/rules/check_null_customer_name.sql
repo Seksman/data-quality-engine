@@ -3,5 +3,6 @@
 
 Select 
     COUNT(*) AS null_customer_name_count
+    COUNT(*) * 1.0/(Select COUNT(*) FROM customers) AS null_customer_name_perc
 From customers
 WHERE customer_name IS NULL;
